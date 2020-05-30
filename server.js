@@ -11,5 +11,5 @@ firstApp.get('/', (req,res) =>
 
 const server = http.createServer(firstApp);
 
-server.listen(1234)
+server.listen(process.env.PORT || 1234)
 console.log("start server")
