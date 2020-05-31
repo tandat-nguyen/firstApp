@@ -8,6 +8,7 @@ const Database = require('../database/database');
 const firstApp = express();
 
 firstApp.get('/:id?', (req,res) =>{
+  console.log(req.params);
   const index = fs.readFileSync('client/index.html');
   res.send(index.toString());
 }
