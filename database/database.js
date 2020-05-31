@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://admin-data:admindata123@ds347298.mlab.com:47298/heroku_l19dfs28', 
+mongoose.connect('mongodb://admin:admin12345@ds041228.mlab.com:41228/heroku_64fw1q3v', 
 {
   useNewUrlParser: true, 
   useUnifiedTopology: true
