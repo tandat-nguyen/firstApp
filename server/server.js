@@ -1,0 +1,19 @@
+
+const http = require('http');
+const express = require('express');
+const fs = require ('fs');
+const Database = require('../database/database');
+
+
+const firstApp = express();
+
+firstApp.get('/:id?', (req,res) =>{
+  const index = fs.readFileSync('client/index.html');
+  res.send(index.toString());
+}
+)
+
+const server = http.createServer(firstApp);
+
+server.listen(process.env.PORT || 97)
+console.log("start server")
