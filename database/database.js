@@ -1,19 +1,13 @@
+
 const mongoose = require('mongoose');
 
+mongoose.connect('mongodb://admin-data:admin12345@ds041228.mlab.com:41228/heroku_64fw1q3v', 
+{
+  useNewUrlParser: true, 
+  useUnifiedTopology: true
+});
 
-module.exports = class Database {
-  static async init() {
-    await mongoose.connect('mongodb://root:Admin123@ds149433.mlab.com:49433/heroku_kmrs92s3',
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      }
-    );
+const Cat = mongoose.model('Cat', { name: String });
 
-    const Cat = mongoose.model('Cat', { name: String });
-
-    const kitty = new Cat({ name: 'Zildjian' });
-    const newKitty = await kitty.save();
-    console.log(newKitty.name + ': meow');
-  }
-}
+const kitty = new Cat({ name: 'Zildjian' });
+kitty.save().then(() => console.log(kitty.name +': meow'));
