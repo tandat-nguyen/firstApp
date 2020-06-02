@@ -4,7 +4,7 @@ const express = require('express');
 const fs = require ('fs');
 const Database = require('../database/database');
 
-
+Database.init();
 const firstApp = express();
 
 firstApp.get('/:id?', (req,res) =>{
